@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -42,6 +43,11 @@ class LoginPage extends StatelessWidget {
                 ),
 
                 SizedBox(height: 30),
+
+                // Container(
+                // height: MediaQuery.of(context).size.height / 3,
+                // child: Lottie.network('https://assets7.lottiefiles.com/packages/lf20_yupefrh2.json'),
+                // ),
 
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 40),

@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:login_signup_screen/login.dart';
 import 'package:login_signup_screen/signup.dart';
+import 'package:lottie/lottie.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -53,12 +54,9 @@ class HomePage extends StatelessWidget {
 
               Container(
                 height: MediaQuery.of(context).size.height / 3,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/welcome.png")
-                  )
+                child: Lottie.network('https://assets9.lottiefiles.com/packages/lf20_M9p23l.json'),
                 ),
-              ),
+
 
               Column(
                 children: <Widget>[
