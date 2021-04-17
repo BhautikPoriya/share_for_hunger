@@ -1,4 +1,4 @@
-package com.example.share_for_hunger
+package com.example.log_sign
 
 import io.flutter.embedding.android.FlutterActivity
 

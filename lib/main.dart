@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+<<<<<<< Updated upstream
 
 void main() {
   runApp(MyApp());
@@ -110,4 +111,54 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+=======
+import 'package:firebase_core/firebase_core.dart';
+import 'package:log_sign/models/user.dart';
+import 'package:log_sign/screens/auth/signup.dart';
+import 'package:log_sign/screens/wrapper.dart';
+import 'package:log_sign/services/auth.dart';
+import 'package:provider/provider.dart';
+
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(MyApp());
+>>>>>>> Stashed changes
 }
+
+class MyApp extends StatelessWidget {
+
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+
+@override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+      // Initialize FlutterFire:
+      future: _initialization,
+      builder: (context, snapshot) {
+        // Check for errors
+        if (snapshot.hasError) {
+          //return SomethingWentWrong();
+        }
+
+        // Once complete, show your application
+        if (snapshot.connectionState == ConnectionState.done) {
+          return StreamProvider<UserModel>.value(
+            value: AuthService().user, initialData: null,
+            child: MaterialApp(
+              home: Wrapper(),
+            ),
+          );
+        }
+
+        // Otherwise, show something whilst waiting for initialization to complete
+        return Text('Loading...');
+      },
+    );
+  }
+}
+  
+
+
+
+
+  
